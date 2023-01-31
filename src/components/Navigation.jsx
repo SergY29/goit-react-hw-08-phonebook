@@ -8,6 +8,7 @@ import { selectIsLoggedIn } from 'redux/auth/selectors';
 
 export const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
+
   return (
     <Toolbar component="nav" sx={{ flexGrow: 1 }}>
       <Tab label="Home" to="/" component={Link} />
