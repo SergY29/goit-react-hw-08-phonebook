@@ -1,7 +1,13 @@
+import { RegisterForm } from 'components//RegisterForm';
+import { Helmet } from 'react-helmet-async';
+
 export default function RegisterPage() {
   return (
     <div>
-      <h1>RegisterPage</h1>
+      <Helmet>
+        <title>Registration</title>
+      </Helmet>
+      <RegisterForm />
     </div>
   );
 }
