@@ -1,11 +1,11 @@
-// import { useDispatch } from 'react-redux';
-// import { register } from 'redux/auth/operations';
+import { useDispatch } from 'react-redux';
+import { register } from 'redux/auth/operations';
 import { FormControl, InputLabel, Input } from '@mui/material';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 
 export const RegisterForm = () => {
-  //   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -16,13 +16,13 @@ export const RegisterForm = () => {
       form.elements.email.value,
       form.elements.password.value
     );
-    // dispatch(
-    //   register({
-    //     name: form.elements.name.value,
-    //     email: form.elements.email.value,
-    //     password: form.elements.password.value,
-    //   })
-    // );
+    dispatch(
+      register({
+        name: form.elements.name.value,
+        email: form.elements.email.value,
+        password: form.elements.password.value,
+      })
+    );
     form.reset();
   };
 
