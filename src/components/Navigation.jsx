@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Toolbar from '@mui/material/Toolbar';
 import Tab from '@mui/material/Tab';
 
-import { selectIsLoggedIn } from 'redux/authUser/selectors';
+import { selectIsLoggedIn } from 'redux/auth/selectors';
 
 export const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);

@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 
 import AppBar from '@mui/material/AppBar';
 import { Navigation } from 'components/Navigation';
-import { selectIsLoggedIn } from 'redux/authUser/selectors';
+import { selectIsLoggedIn } from 'redux/auth/selectors';
 import { UserMenu } from 'components/UserMenu';
 import { AuthNav } from 'components/AuthNav';
 
