@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { HelmetProvider } from 'react-helmet-async';
+import { PersistGate } from 'redux-persist/integration/react'
 
 import { ThemeProvider } from '@emotion/react';
 import { createTheme } from '@mui/material/styles';
 
-import { store } from 'redux/store';
+import { store, persistor } from 'redux/store';
 import { App } from 'components/App';
 import './index.css';
 
@@ -34,13 +35,15 @@ const theme = createTheme({
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter basename="/goit-react-hw-08-phonebook">
-        <ThemeProvider theme={theme}>
-          <HelmetProvider>
-            <App />
-          </HelmetProvider>
-        </ThemeProvider>
-      </BrowserRouter>
+      <PersistGate loading={null} persistor={persistor}>
+        <BrowserRouter basename="/goit-react-hw-08-phonebook">
+          <ThemeProvider theme={theme}>
+            <HelmetProvider>
+              <App />
+            </HelmetProvider>
+          </ThemeProvider>
+        </BrowserRouter>
+      </PersistGate>
     </Provider>
   </React.StrictMode>
 );
