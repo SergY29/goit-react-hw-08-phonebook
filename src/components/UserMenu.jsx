@@ -1,15 +1,13 @@
-import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
-import { selectUser } from 'redux/auth/selectors';
 import { logOut } from 'redux/auth/operations';
+import { useAuth } from 'hooks';
 
 export const UserMenu = () => {
-  const user = useSelector(selectUser);
+  const { user } = useAuth();
   const dispatch = useDispatch();
 
   const handleLogout = () => {

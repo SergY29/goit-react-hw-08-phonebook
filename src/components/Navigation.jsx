@@ -1,13 +1,11 @@
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-
 import Toolbar from '@mui/material/Toolbar';
 import Tab from '@mui/material/Tab';
 
-import { selectIsLoggedIn } from 'redux/auth/selectors';
+import { useAuth } from 'hooks';
 
 export const Navigation = () => {
-  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const { isLoggedIn } = useAuth();
 
   return (
     <Toolbar component="nav" sx={{ flexGrow: 1 }}>
