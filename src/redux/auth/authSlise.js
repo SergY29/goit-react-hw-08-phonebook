@@ -39,11 +39,6 @@ const authSlice = createSlice({
             .addCase(fetchCurrentUser.rejected, (state) => {
                 state.isRefreshing = false;
             })
-    // {
-    //     // [register.pending](state, action) {
-    //     // },
-    //     // [register.rejected](state, action) {
-    //     // },
 });
 
 export const authReducer = authSlice.reducer;
