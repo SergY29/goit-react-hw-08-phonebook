@@ -7,15 +7,13 @@ import Typography from '@mui/material/Typography';
 
 import { addContact } from 'redux/contacts/operations';
 
-
 export const ContactForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
-    console.log(data.get('name'));
-    console.log(data.get('number'));
+
     dispatch(
       addContact({
         name: data.get('name'),
