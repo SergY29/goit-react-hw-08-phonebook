@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 import { addContact } from 'redux/contacts/operations';
-// import { useContacts } from 'hooks';
+
 
 export const ContactForm = () => {
   const dispatch = useDispatch();

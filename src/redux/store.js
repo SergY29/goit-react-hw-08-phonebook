@@ -11,7 +11,7 @@ import {
 
 import { persistAuthReducer } from 'redux/auth/authSlise';
 import { filterSlice } from 'redux/filter/filterSlice1';
-import { contactSlice } from "redux/contacts/contactsSlice1";
+import { contactSlice } from "redux/contacts/contactsSlice";
 
 
 
