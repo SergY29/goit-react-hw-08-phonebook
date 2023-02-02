@@ -3,6 +3,7 @@ import { register } from 'redux/auth/operations';
 
 import { Link } from 'react-router-dom';
 
+import { toast } from 'react-toastify';
 import Avatar from '@mui/material/Avatar';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -13,8 +14,11 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
+import { useAuth } from 'hooks';
+
 export const RegisterForm = () => {
   const dispatch = useDispatch();
+  const { error } = useAuth();
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -26,6 +30,13 @@ export const RegisterForm = () => {
         password: data.get('password'),
       })
     );
+    if (error === true) {
+      toast.error(
+        `Opps! Failed to register, invalid email address or blank fields`
+      );
+      return;
+    }
+
     e.currentTarget.reset();
   };
 

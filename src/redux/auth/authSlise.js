@@ -9,7 +9,7 @@ const initialState = {
     token: null,
     isLoggedIn: false,
     isRefreshing: false,
-    error: null,
+    error: false,
 };
 
 const authSlice = createSlice({
@@ -21,22 +21,28 @@ const authSlice = createSlice({
                 state.user = action.payload.user;
                 state.token = action.payload.token;
                 state.isLoggedIn = true;
-                state.error = null;
+                state.error = false;
+            })
+            .addCase(register.pending, (state) => {
+                state.error = false;
             })
             .addCase(logIn.fulfilled, (state, action) => {
                 state.user = action.payload.user;
                 state.token = action.payload.token;
                 state.isLoggedIn = true;
-                state.error = null;
+                state.error = false;
             })
-            .addCase(logIn.rejected, (state, action) => {
-                state.error = action.payload;
+            .addCase(logIn.pending, (state) => {
+                state.error = false;
+            })
+            .addCase(logIn.rejected, (state) => {
+                state.error = true;
             })
             .addCase(logOut.fulfilled, (state) => {
                 state.user = { name: null, email: null };
                 state.token = null;
                 state.isLoggedIn = false;
-                state.error = null;
+                state.error = false;
             })
             .addCase(fetchCurrentUser.pending, (state) => {
                 state.isRefreshing = true;
@@ -45,11 +51,11 @@ const authSlice = createSlice({
                 state.user = action.payload;
                 state.isLoggedIn = true;
                 state.isRefreshing = false;
-                state.error = null;
+                state.error = false;
             })
             .addCase(fetchCurrentUser.rejected, (state) => {
                 state.isRefreshing = false;
-                state.error = null;
+                state.error = true;
             })
 });
 

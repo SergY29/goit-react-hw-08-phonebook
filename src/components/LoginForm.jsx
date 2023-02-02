@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { logIn } from 'redux/auth/operations';
 import { useAuth } from 'hooks';
 
+import { toast } from 'react-toastify';
 import Avatar from '@mui/material/Avatar';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -16,7 +17,7 @@ import Typography from '@mui/material/Typography';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
-  const { isLoggedIn } = useAuth();
+  const { error } = useAuth();
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -28,7 +29,11 @@ export const LoginForm = () => {
       })
     );
     e.currentTarget.reset();
-    if (!isLoggedIn) {
+
+    if (error === true) {
+      toast.error(
+        `Opps! We can't seem to find that email and password combination, try another?`
+      );
     }
   };
 
@@ -67,8 +72,8 @@ export const LoginForm = () => {
             name="password"
             label="Password"
             type="password"
-            id="password"
             autoComplete="current-password"
+            id="password"
           />
           <Button
             type="submit"
