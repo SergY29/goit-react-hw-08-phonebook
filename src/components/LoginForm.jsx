@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { logIn } from 'redux/auth/operations';
 import { useAuth } from 'hooks';
 
-import { toast } from 'react-toastify';
 import Avatar from '@mui/material/Avatar';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -28,12 +27,6 @@ export const LoginForm = () => {
         password: data.get('password'),
       })
     );
-
-    if (error === true) {
-      toast.error(
-        `Opps! We can't seem to find that email and password combination, try another?`
-      );
-    }
     e.currentTarget.reset();
   };
 
@@ -75,11 +68,16 @@ export const LoginForm = () => {
             autoComplete="current-password"
             id="password"
           />
+          {error === true && (
+            <Typography component="h6" color="#e00f0f" sx={{ mb: -3 }}>
+              Opps! Wrong data, try another
+            </Typography>
+          )}
           <Button
             type="submit"
             fullWidth
             variant="contained"
-            sx={{ mt: 3, mb: 2 }}
+            sx={{ mt: 5.7, mb: 2 }}
           >
             Log In
           </Button>

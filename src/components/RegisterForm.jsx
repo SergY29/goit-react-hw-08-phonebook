@@ -3,7 +3,6 @@ import { register } from 'redux/auth/operations';
 
 import { Link } from 'react-router-dom';
 
-import { toast } from 'react-toastify';
 import Avatar from '@mui/material/Avatar';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -30,13 +29,6 @@ export const RegisterForm = () => {
         password: data.get('password'),
       })
     );
-    if (error === true) {
-      toast.error(
-        `Opps! Failed to register, invalid email address or blank fields`
-      );
-      return;
-    }
-
     e.currentTarget.reset();
   };
 
@@ -88,11 +80,16 @@ export const RegisterForm = () => {
             id="password"
             autoComplete="current-password"
           />
+          {error === true && (
+            <Typography component="h6" color="#e00f0f" sx={{ mb: -3 }}>
+              Failed to register, invalid email address or blank fields
+            </Typography>
+          )}
           <Button
             type="submit"
             fullWidth
             variant="contained"
-            sx={{ mt: 3, mb: 2 }}
+            sx={{ mt: 5.7, mb: 2 }}
           >
             Register
           </Button>
