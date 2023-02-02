@@ -38,7 +38,7 @@ export const ContactForm = () => {
         ml: 15,
       }}
     >
-      <Typography component="h1" variant="h5">
+      <Typography component="h1" variant="h4">
         Create Contact
       </Typography>
       <Box
