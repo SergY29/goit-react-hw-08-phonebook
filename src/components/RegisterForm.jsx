@@ -57,16 +57,16 @@ export const RegisterForm = () => {
         <Typography component="h1" variant="h5">
           Create a Contact manager
         </Typography>
-        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+        <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }} required>
           <TextField
             margin="normal"
-            required
             fullWidth
             id="name"
             label="Name"
             name="name"
             autoComplete="name"
             autoFocus
+            required
           />
           <TextField
             margin="normal"

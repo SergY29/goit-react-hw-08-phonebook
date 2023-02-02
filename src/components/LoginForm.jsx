@@ -28,13 +28,13 @@ export const LoginForm = () => {
         password: data.get('password'),
       })
     );
-    e.currentTarget.reset();
 
     if (error === true) {
       toast.error(
         `Opps! We can't seem to find that email and password combination, try another?`
       );
     }
+    e.currentTarget.reset();
   };
 
   return (
@@ -54,10 +54,10 @@ export const LoginForm = () => {
         <Typography component="h1" variant="h5">
           Log in to Contact manager
         </Typography>
-        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+        <Box required component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
           <TextField
-            margin="normal"
             required
+            margin="normal"
             fullWidth
             id="email"
             label="Email Address"
@@ -66,8 +66,8 @@ export const LoginForm = () => {
             autoFocus
           />
           <TextField
-            margin="normal"
             required
+            margin="normal"
             fullWidth
             name="password"
             label="Password"
