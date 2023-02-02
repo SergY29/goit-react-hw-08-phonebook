@@ -1,13 +1,20 @@
 import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import { MuiTelInput } from 'mui-tel-input';
 
 import { addContact } from 'redux/contacts/operations';
 
 export const ContactForm = () => {
+  const [phone, setPhone] = useState('');
+
+  const handleChange = newPhone => {
+    setPhone(newPhone);
+  };
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -27,9 +34,8 @@ export const ContactForm = () => {
     <Box
       sx={{
         mt: 5,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
+        mr: 15,
+        ml: 15,
       }}
     >
       <Typography component="h1" variant="h5">
@@ -56,16 +62,17 @@ export const ContactForm = () => {
             mr: 6,
           }}
         />
-        <TextField
-          type="tel"
-          margin="normal"
-          required
-          fullWidth
+        <MuiTelInput
           name="number"
+          required
+          margin="normal"
+          fullWidth
           label="Number"
           id="number"
+          value={phone}
+          onChange={handleChange}
           sx={{
-            mr: 10,
+            mr: 6,
           }}
         />
         <Button
