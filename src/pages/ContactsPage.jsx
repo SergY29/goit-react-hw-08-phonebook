@@ -15,14 +15,16 @@ export default function ContactsPage() {
     dispatch(fetchContacts());
   }, [dispatch]);
 
+  const loadingContactsList = contacts.length > 0;
+
   return (
     <div>
       <Helmet>
         <title>Your contacts</title>
       </Helmet>
       <ContactForm />
-      <div>{isLoading && contacts.length && 'Request in progress...'}</div>
-      {contacts.length > 0 && <ContactList />}
+      {isLoading && <div>Request in progress...</div>}
+      {loadingContactsList && <ContactList />}
     </div>
   );
 }

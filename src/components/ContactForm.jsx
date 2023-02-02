@@ -28,6 +28,7 @@ export const ContactForm = () => {
       })
     );
     e.currentTarget.reset();
+    setPhone('');
   };
 
   return (
