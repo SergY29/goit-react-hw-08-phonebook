@@ -23,7 +23,6 @@ export default function ContactsPage() {
       <ContactForm />
       <div>{isLoading && contacts.length && 'Request in progress...'}</div>
       {contacts.length > 0 && <ContactList />}
-      <ContactList />
     </div>
   );
 }

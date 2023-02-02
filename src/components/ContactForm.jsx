@@ -57,12 +57,12 @@ export const ContactForm = () => {
           }}
         />
         <TextField
+          type="tel"
           margin="normal"
           required
           fullWidth
           name="number"
           label="Number"
-          type="number"
           id="number"
           sx={{
             mr: 10,
@@ -80,6 +80,9 @@ export const ContactForm = () => {
     </Box>
   );
 };
+
+// inputProps={{ pattern: '[0-9] ' }}
+// pattern="+?d{1,4}?[-.s]?(?d{1,3}?)?[-.s]?d{1,4}[-.s]?d{1,4}[-.s]?d{1,9}"
 
 // import Avatar from '@mui/material/Avatar';
 // import Button from '@mui/material/Button';
