@@ -1,117 +1,19 @@
+import { Helmet } from 'react-helmet-async';
+import { useContacts } from 'hooks';
+
+import { ContactForm } from 'components/ContactForm';
+
 export default function ContactsPage() {
+  const { isLoading } = useContacts();
+  console.log(isLoading);
   return (
     <div>
-      <h1>ContactsPage</h1>
+      <Helmet>
+        <title>Your contacts</title>
+      </Helmet>
+
+      <ContactForm />
+      <div>{isLoading && 'Request in progress...'}</div>
     </div>
   );
 }
-
-// import Avatar from '@mui/material/Avatar';
-// import Button from '@mui/material/Button';
-// import CssBaseline from '@mui/material/CssBaseline';
-// import TextField from '@mui/material/TextField';
-// import FormControlLabel from '@mui/material/FormControlLabel';
-// import Checkbox from '@mui/material/Checkbox';
-// import Link from '@mui/material/Link';
-// import Grid from '@mui/material/Grid';
-// import Box from '@mui/material/Box';
-// // import AddIcCallIcon from '@mui/icons-material/AddIcCall';
-// import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-
-// import Typography from '@mui/material/Typography';
-// import Container from '@mui/material/Container';
-
-// export default function ContactsPage() {
-//   return (
-//     <Container component="main" maxWidth="xs">
-//       <CssBaseline />
-//       <Box
-//         sx={{
-//           marginTop: 8,
-//           display: 'flex',
-//           flexDirection: 'column',
-//           alignItems: 'center',
-//         }}
-//       >
-//         <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-//           <AccountCircleIcon />
-//         </Avatar>
-//         <Typography component="h1" variant="h5">
-//           Sign in
-//         </Typography>
-//         <Box component="form" noValidate sx={{ mt: 1 }}>
-//           <TextField
-//             margin="normal"
-//             required
-//             fullWidth
-//             id="email"
-//             label="Email Address"
-//             name="email"
-//             autoComplete="email"
-//             autoFocus
-//           />
-//           <TextField
-//             margin="normal"
-//             required
-//             fullWidth
-//             name="password"
-//             label="Password"
-//             type="password"
-//             id="password"
-//             autoComplete="current-password"
-//           />
-//           <FormControlLabel
-//             control={<Checkbox value="remember" color="primary" />}
-//             label="Remember me"
-//           />
-//           <Button
-//             type="submit"
-//             fullWidth
-//             variant="contained"
-//             sx={{ mt: 3, mb: 2 }}
-//           >
-//             Sign In
-//           </Button>
-//           <Grid container>
-//             <Grid item xs>
-//               <Link href="#" variant="body2">
-//                 Forgot password?
-//               </Link>
-//             </Grid>
-//             <Grid item>
-//               <Link href="#" variant="body2">
-//                 {"Don't have an account? Sign Up"}
-//               </Link>
-//             </Grid>
-//           </Grid>
-//         </Box>
-//       </Box>
-//     </Container>
-//   );
-// }
-
-// <Box
-//   component="form"
-//   onSubmit={handleSubmit}
-//   autoComplete="off"
-//   sx={{
-//     py: 2,
-//     display: 'flex',
-//     flexDirection: 'column',
-//     gap: 2,
-//     alignItems: 'center',
-//     flexWrap: 'wrap',
-//   }}
-// >
-//   <FormControl>
-//     <InputLabel htmlFor="my-email">Email</InputLabel>
-//     <Input required id="my-emai" type="email" name="email" />
-//   </FormControl>
-//   <FormControl>
-//     <InputLabel htmlFor="my-input">Password</InputLabel>
-//     <Input required id="my-passwor" name="password" autoComplete="on" />
-//   </FormControl>
-//   <Button variant="outlined" type="submit">
-//     Log In
-//   </Button>
-// </Box>;

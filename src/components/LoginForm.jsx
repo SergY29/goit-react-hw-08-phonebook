@@ -93,29 +93,3 @@ export const LoginForm = () => {
     </Container>
   );
 };
-
-// <Box
-//   component="form"
-//   onSubmit={handleSubmit}
-//   autoComplete="off"
-//   sx={{
-//     py: 2,
-//     display: 'flex',
-//     flexDirection: 'column',
-//     gap: 2,
-//     alignItems: 'center',
-//     flexWrap: 'wrap',
-//   }}
-// >
-//   <FormControl>
-//     <InputLabel htmlFor="my-email">Email</InputLabel>
-//     <Input required id="my-emai" type="email" name="email" />
-//   </FormControl>
-//   <FormControl>
-//     <InputLabel htmlFor="my-input">Password</InputLabel>
-//     <Input required id="my-passwor" name="password" autoComplete="on" />
-//   </FormControl>
-//   <Button variant="outlined" type="submit">
-//     Log In
-//   </Button>
-// </Box>;

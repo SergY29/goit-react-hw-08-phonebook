@@ -6,7 +6,7 @@ import {
     selectFilter,
 } from 'redux/contacts/selectors';
 
-export const useAuth = () => {
+export const useContacts = () => {
     const contacts = useSelector(selectContacts);
     const isLoading = useSelector(selectIsLoading);
     const isError = useSelector(selectError);

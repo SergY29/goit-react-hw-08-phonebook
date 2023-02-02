@@ -105,39 +105,3 @@ export const RegisterForm = () => {
     </Container>
   );
 };
-
-// export const RegisterForm = () => {
-//   const dispatch = useDispatch();
-
-//   return (
-//     <Box
-//       component="form"
-//       onSubmit={handleSubmit}
-//       autoComplete="off"
-//       sx={{
-//         py: 2,
-//         display: 'flex',
-//         flexDirection: 'column',
-//         gap: 2,
-//         alignItems: 'center',
-//         flexWrap: 'wrap',
-//       }}
-//     >
-//       <FormControl>
-//         <InputLabel htmlFor="my-input">Username</InputLabel>
-//         <Input required id="my-input" type="text" name="name" />
-//       </FormControl>
-//       <FormControl>
-//         <InputLabel htmlFor="my-email">Email</InputLabel>
-//         <Input required id="my-emai" type="email" name="email" />
-//       </FormControl>
-//       <FormControl>
-//         <InputLabel htmlFor="my-input">Password</InputLabel>
-//         <Input required id="my-passwor" name="password" autoComplete="on" />
-//       </FormControl>
-//       <Button variant="outlined" type="submit">
-//         Register
-//       </Button>
-//     </Box>
-//   );
-// };
