@@ -18,13 +18,13 @@ export default function ContactsPage() {
   const loadingContactsList = contacts.length > 0;
 
   return (
-    <div>
+    <main>
       <Helmet>
         <title>Your contacts</title>
       </Helmet>
       <ContactForm />
       {isLoading && <div>Request in progress...</div>}
       {loadingContactsList && <ContactList />}
-    </div>
+    </main>
   );
 }

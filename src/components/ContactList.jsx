@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 import { useContacts } from 'hooks';
-import { Contact } from 'components/Contact1';
+import { Contact } from 'components/Contact';
 import { Item } from 'components/ContactList.styled';
 
 export const ContactList = () => {

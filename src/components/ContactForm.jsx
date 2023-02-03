@@ -1,5 +1,5 @@
-import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -7,20 +7,29 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { MuiTelInput } from 'mui-tel-input';
 
+import { useContacts } from 'hooks';
 import { addContact } from 'redux/contacts/operations';
 
 export const ContactForm = () => {
   const [phone, setPhone] = useState('');
+  const dispatch = useDispatch();
+  const { contacts } = useContacts();
 
   const handleChange = newPhone => {
     setPhone(newPhone);
   };
-  const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
+    const newName = data.get('name');
+    const notUniqueName = contacts.find(
+      contact => contact.name.toLowerCase() === newName.toLowerCase()
+    );
 
+    if (notUniqueName) {
+      return alert(`${newName} is alredy in contacts!`);
+    }
     dispatch(
       addContact({
         name: data.get('name'),
