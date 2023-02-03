@@ -2,13 +2,9 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-
-import { useContacts } from 'hooks';
 import { Contact } from 'components/Contact';
 
-export const ContactList = () => {
-  const { contacts } = useContacts();
-
+export const ContactList = ({ contacts }) => {
   return (
     <Box
       sx={{
@@ -31,13 +27,6 @@ export const ContactList = () => {
           </ListItem>
         ))}
       </List>
-      {/* <ul>
-        {contacts.map(({ id, name, number }) => (
-          <Item key={id}>
-            <Contact id={id} name={name} number={number} />
-          </Item>
-        ))}
-      </ul> */}
     </Box>
   );
 };

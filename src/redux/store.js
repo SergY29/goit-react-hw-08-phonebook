@@ -10,7 +10,7 @@ import {
 } from 'redux-persist';
 
 import { persistAuthReducer } from 'redux/auth/authSlise';
-import { filterSlice } from 'redux/filter/filterSlice1';
+import { filterSlice } from 'redux/filter/filterSlice';
 import { contactSlice } from "redux/contacts/contactsSlice";
 
 
