@@ -1,6 +1,12 @@
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
-import { Button } from 'components/Contact.styled';
+
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import ListItemText from '@mui/material/ListItemText';
+import Avatar from '@mui/material/Avatar';
+import IconButton from '@mui/material/IconButton';
+import FolderIcon from '@mui/icons-material/Folder';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
@@ -8,12 +14,16 @@ export const Contact = ({ id, name, number }) => {
 
   return (
     <>
-      <p>
-        {name}: {number}
-      </p>
-      <Button type="button" onClick={handleDelete}>
-        Delete
-      </Button>
+      <ListItemAvatar>
+        <Avatar>
+          <FolderIcon />
+        </Avatar>
+      </ListItemAvatar>
+      <ListItemText primary={name} />
+      <ListItemText primary={number} />
+      <IconButton aria-label="delete" type="button" onClick={handleDelete}>
+        <DeleteIcon />
+      </IconButton>
     </>
   );
 };
