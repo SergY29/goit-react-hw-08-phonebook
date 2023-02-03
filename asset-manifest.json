@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/goit-react-hw-08-phonebook/static/css/main.c9969133.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.b2ba4387.js",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.1adac10e.js",
     "static/js/983.b0667550.chunk.js": "/goit-react-hw-08-phonebook/static/js/983.b0667550.chunk.js",
-    "static/js/530.cecdbdfe.chunk.js": "/goit-react-hw-08-phonebook/static/js/530.cecdbdfe.chunk.js",
+    "static/js/12.b765e8fe.chunk.js": "/goit-react-hw-08-phonebook/static/js/12.b765e8fe.chunk.js",
     "static/js/931.94075814.chunk.js": "/goit-react-hw-08-phonebook/static/js/931.94075814.chunk.js",
     "static/js/975.6a6ec1cf.chunk.js": "/goit-react-hw-08-phonebook/static/js/975.6a6ec1cf.chunk.js",
     "static/js/319.b655309a.chunk.js": "/goit-react-hw-08-phonebook/static/js/319.b655309a.chunk.js",
@@ -12,9 +12,9 @@
     "static/js/942.2d49e436.chunk.js": "/goit-react-hw-08-phonebook/static/js/942.2d49e436.chunk.js",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
     "main.c9969133.css.map": "/goit-react-hw-08-phonebook/static/css/main.c9969133.css.map",
-    "main.b2ba4387.js.map": "/goit-react-hw-08-phonebook/static/js/main.b2ba4387.js.map",
+    "main.1adac10e.js.map": "/goit-react-hw-08-phonebook/static/js/main.1adac10e.js.map",
     "983.b0667550.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/983.b0667550.chunk.js.map",
-    "530.cecdbdfe.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/530.cecdbdfe.chunk.js.map",
+    "12.b765e8fe.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/12.b765e8fe.chunk.js.map",
     "931.94075814.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/931.94075814.chunk.js.map",
     "975.6a6ec1cf.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/975.6a6ec1cf.chunk.js.map",
     "319.b655309a.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/319.b655309a.chunk.js.map",
@@ -24,6 +24,6 @@
   },
   "entrypoints": [
     "static/css/main.c9969133.css",
-    "static/js/main.b2ba4387.js"
+    "static/js/main.1adac10e.js"
   ]
 }
